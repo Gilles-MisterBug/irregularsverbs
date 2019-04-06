@@ -1,0 +1,35 @@
+<h1 class="text-center mb-4">Irregular verbs list</h1>
+<div class="row">
+    <div class="col text-right">
+        <label class="mr-2">Family :</label>
+        <select id="viewFamily" [(ngModel)]="viewFamily">
+                <option *ngFor="let f of family" [value]="f.codeFamily">{{ f.label }}</option>
+        </select>
+
+    </div>
+</div>
+<table class="table table-bordered table-striped">
+    <caption>Irregular verbs</caption>
+    <thead class="thead-dark">
+        <tr>
+            <th>Verb</th>
+            <th colspan="2">Past simple</th>
+            <th>Past participle</th>
+            <th>Translation</th>
+            <th>Family</th>
+        </tr>
+    </thead>
+    <tbody>
+        <ng-container *ngFor="let verb of verbs">
+            <tr *ngIf="(viewFamily === family[0].codeFamily) || (viewFamily === verb.codeFamily)">
+                <td>{{ verb.verb }}</td>
+                <td colspan="2" *ngIf="verb.preteritSingular === verb.preteritPlural">{{ verb.preteritSingular }}</td>
+                <td *ngIf="verb.preteritSingular !== verb.preteritPlural">{{ verb.preteritSingular }}</td>
+                <td *ngIf="verb.preteritSingular !== verb.preteritPlural">{{ verb.preteritPlural }}</td>
+                <td>{{ verb.pastParticiple }}</td>
+                <td>{{ verb.translate }}</td>
+                <td>{{ family[verb.codeFamily].label }}</td>
+            </tr>
+        </ng-container>
+    </tbody>
+</table>

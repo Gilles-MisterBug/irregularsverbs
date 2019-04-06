@@ -1,0 +1,20 @@
+[
+    {
+        "logo": "/assets/link/img/bbc_learning.png",
+        "url": "http://www.bbc.co.uk/learningenglish",
+        "title": "BBC Learning",
+        "description": "As part of the BBC World Service, BBC Learning English has been teaching English to global audiences since 1943, offering free audio, video and text materials to learners around the world."
+    },
+    {
+        "logo": "/assets/link/img/bbc_sounds.png",
+        "url": "https://www.bbc.co.uk/sounds",
+        "title": "BBC Sounds",
+        "description": "Each week, over 36 million people listen to BBC Radio. The BBC offers a portfolio of services aimed at offering listeners the highest quality programmes, whatever their interest or mood."
+    },
+    {
+        "logo": "/assets/link/img/tenses.png",
+        "url": "http://www.elihinkel.org/tips/tenses.htm",
+        "title": "English tenses",
+        "description": "This prensentation explains English tenses"
+    }
+]

@@ -1,0 +1,34 @@
+<h1 class="text-center mb-4">
+    Fill the gaps
+</h1>
+<div class="row text-center mb-3" *ngIf="submitDone">
+    <div class="col-10 bg-success offset-1" *ngIf="nbVerbsWrong === 0">Bravo !</div>
+    <div class="col-10 bg-warning offset-1" *ngIf="nbVerbsWrong !== 0">{{nbVerbsWrong}} mistake(s) !</div>
+</div>
+<form [formGroup]="exerciseForm" (ngSubmit)="onSubmitForm()">
+
+    <ul formArrayName="verbs" *ngFor="let v of verbs.controls; let i = index;">
+        <li [formGroupName]="i" class="form-group row border-bottom pb-3">
+            <span class="col-3">
+                {{i+1}} : {{exerciseVerbs[i].verb}} ( {{exerciseVerbs[i].translate}} )
+            </span>
+            <span class="col-3" *ngIf="v.get('preterit')">
+                <input type="text" formControlName="preterit" placeholder="Past simple" class="verb">
+            </span>
+            <span class="col-3" *ngIf="v.get('preteritSingular')">
+                <input type="text" formControlName="preteritSingular" placeholder="Past simple (singular)" class="verb">
+            </span>
+            <span class="col-3" *ngIf="v.get('preteritPlural')">
+                <input type="text" formControlName="preteritPlural" placeholder="Past simple (plural)" class="verb">
+            </span>
+            <span class="col-3">
+                <input type="text" formControlName="pastParticiple" placeholder="Past participle" class="verb">
+            </span>
+        </li>
+    </ul>
+    <div class="text-center mt-3">
+        <button type="button" class="m-1 btn btn-sm btn-danger" (click)="onCorrect()" *ngIf="submitDone">Correct</button>
+        <button type="button" class="m-1 btn btn-sm btn-warning" (click)="onShowError()" *ngIf="submitDone">Show error</button>
+        <button type="submit" class="m-1 btn btn-sm btn-primary">Check</button>
+    </div>
+</form>
