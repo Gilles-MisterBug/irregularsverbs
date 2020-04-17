@@ -2,7 +2,7 @@
     Fill the gaps
 </h1>
 <div class="row text-center mb-3" *ngIf="submitDone">
-    <div class="col-10 bg-success offset-1" *ngIf="nbVerbsWrong === 0">Bravo !</div>
+    <div class="col-10 bg-success offset-1" *ngIf="nbVerbsWrong === 0">Congratulations !</div>
     <div class="col-10 bg-warning offset-1" *ngIf="nbVerbsWrong !== 0">{{nbVerbsWrong}} mistake(s) !</div>
 </div>
 <form [formGroup]="exerciseForm" (ngSubmit)="onSubmitForm()">
