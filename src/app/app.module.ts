@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+// @ts-ignore
 import {PapaParseModule} from 'ngx-papaparse';
 import {HttpClientModule} from '@angular/common/http';
 import { ListVerbsComponent } from './irregularVerbs/components/list-verbs/list-verbs.component';
